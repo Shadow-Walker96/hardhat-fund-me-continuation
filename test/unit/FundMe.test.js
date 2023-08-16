@@ -829,7 +829,7 @@ describe("FundMe", async function () {
                     deployer,
                 )
 
-                assert.equal(endingFundMeBalance, 0)
+                assert.equal(endingFundMeBalance, 0) 
 
                 assert.equal(
                     startingFundMeBalance

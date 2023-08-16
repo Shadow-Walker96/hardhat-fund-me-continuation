@@ -841,7 +841,7 @@ describe("FundMe", async function () {
                 // Here We want to make sure that the funders are reset properly
                 // We want to make sure that when we access the first index of our funders array which is zero 
                 // it should not exist 
-                await expect(fundMe.funders(0)).to.be.reverted // this is it --> address public funders;
+                await expect(fundMe.funders(0)).to.be.reverted // this is it --> address[] public funders;
 
                 // We also want to reset our mapping which is this to zero ---> addressToAmountFunded[funder] = 0;
                 for (i = 1; i < 6; i++) {

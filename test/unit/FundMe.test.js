@@ -845,7 +845,7 @@ describe("FundMe", async function () {
                 for (i = 1; i < 6; i++) {
                     assert.equal(
                         await fundMe.addressToAmountFunded(accounts[i].address),
-                        0,
+                        0,  
                     )
                 }
             }

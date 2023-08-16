@@ -794,7 +794,7 @@ describe("FundMe", async function () {
             const accounts = await ethers.getSigners() // Here we get all the signers which is the accounts of different client that calls it
 
             // Here we loop through all the account
-            for (let i = 1; i < 6; i++) {
+            for (let i = 1; i < 6; i++) { 
                 // The reason why we did fundMe.connect() is bcos currently our fundMe contract is
                 // connected to the deployer --> fundMe = await ethers.getContract("FundMe", deployer)
                 // And anytime we call any transaction with the fundMe, the deployer is the one that is
@@ -839,7 +839,8 @@ describe("FundMe", async function () {
                 )
 
                 // Here We want to make sure that the funders are reset properly
-                await expect(fundMe.funders(0)).to.be.reverted // this is it --> funders = new address[](0);
+                // So if we want to access the index 0 of the funders array it should not exist 
+                await expect(fundMe.funders(0)).to.be.reverted // this is it --> address[] public funders;
 
                 // We also want to reset our mapping which is this to zero ---> addressToAmountFunded[funder] = 0;
                 for (i = 1; i < 6; i++) {

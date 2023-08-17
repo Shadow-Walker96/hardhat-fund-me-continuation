@@ -244,13 +244,14 @@ error FundMe__NotOwner();
 //     }
 
 // }
+// */ 
 
-// */
+// 
+// SPDX-License-Identifier: MIT
 
 // 11:37:31 ---> Testing Fund Me II
 // I didnt add any new code here, i just want to remove the console.log is did in `console.log and debugging`
 
-// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
 import "hardhat/console.sol";
@@ -312,3 +313,10 @@ contract FundMe {
     }
 
 }
+
+
+
+
+
+
+

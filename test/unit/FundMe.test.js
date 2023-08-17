@@ -855,10 +855,10 @@ describe("FundMe", async function () {
 
         // Here we want to test that it only allows the owner of the account to withdraw i.e ---> modifier onlyOwner { if (msg.sender != i_owner) revert FundMe__NotOwner(); _;}
         it("Only allows the owner to withdraw", async function () {
-            const accounts  = ethers.getSigners()
+            const accounts  = await ethers.getSigners()
             const attacker = accounts[1]
             const attackerConnectedContract = await fundMe.connect(attacker)
-            await expect(attackerConnectedContract.withdraw()).to.be.reverted
+            await expect(attackerConnectedContract.withdraw()).to.be.revertedWith("FundMe__NotOwner") // error FundMe__NotOwner();
         })
     })
 })

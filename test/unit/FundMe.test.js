@@ -839,7 +839,7 @@ describe("FundMe", async function () {
                 )
 
                 // Here We want to make sure that the funders are reset properly
-                await expect(fundMe.funders(0)).to.be.reverted // this is it --> funders = new address[](0);
+                await expect(fundMe.funders(0)).to.be.reverted // this is from our solidity code which reset the funders array to be empty --> funders = new address[](0);
 
                 // We also want to reset our mapping which is this to zero ---> addressToAmountFunded[funder] = 0;
                 for (i = 1; i < 6; i++) {
